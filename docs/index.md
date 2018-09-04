@@ -1,8 +1,9 @@
 # Conductor Documentation
 
-Blurb about conductor here..
+Top Level Blurb about conductor here..
 
-## Table of Contents
+## About
+More detailed blurb about conductor.
 
 * some items here
 * another item

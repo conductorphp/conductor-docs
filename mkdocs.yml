@@ -1,2 +1,8 @@
 site_name: Conductor
 dev_addr: 172.30.0.218:8000
+theme:
+    name: mkdocs
+extra_css:
+-   css/version-select.css
+extra_javascript:
+-   js/version-select.js

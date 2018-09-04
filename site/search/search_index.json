@@ -2,18 +2,18 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Conductor Documentation\n\n\nBlurb about conductor here..\n\n\nTable of Contents\n\n\n\n\nsome items here\n\n\nanother item\n\n\n\n\nMkDocs Example Stuff\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    somet.md   # Just a test\n    ...       # Other markdown pages, images and other files.", 
+            "text": "Conductor Documentation\n\n\nTop Level Blurb about conductor here..\n\n\nAbout\n\n\nMore detailed blurb about conductor.\n\n\n\n\nsome items here\n\n\nanother item\n\n\n\n\nMkDocs Example Stuff\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    somet.md   # Just a test\n    ...       # Other markdown pages, images and other files.", 
             "title": "Conductor Documentation"
         }, 
         {
             "location": "/#conductor-documentation", 
-            "text": "Blurb about conductor here..", 
+            "text": "Top Level Blurb about conductor here..", 
             "title": "Conductor Documentation"
         }, 
         {
-            "location": "/#table-of-contents", 
-            "text": "some items here  another item", 
-            "title": "Table of Contents"
+            "location": "/#about", 
+            "text": "More detailed blurb about conductor.   some items here  another item", 
+            "title": "About"
         }, 
         {
             "location": "/#mkdocs-example-stuff", 
