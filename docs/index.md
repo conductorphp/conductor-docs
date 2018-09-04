@@ -1,6 +1,5 @@
 # Conductor Documentation
 
-Top Level Blurb about conductor here..
 
 ## About
 More detailed blurb about conductor.
