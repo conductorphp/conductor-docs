@@ -1,27 +1,36 @@
 site_name: Conductor
 dev_addr: 172.30.0.218:8000
 nav:
-nav:
-- Home: 'index.md'
-- Getting Started: 'guides/getting-started.md'
+- Home: index.md
+- Getting Started: guides/getting-started.md
 - Guides: guides.md
 - Modules:
-  - 'conductor_core': 'conductor_core.md'
-  - 'conductor-application-orchestration': 'conductor-application-orchestration.md'
-  - 'conductor-aws-s3-filesystem-support': 'conductor-aws-s3-filesystem-support.md'
-  - 'conductor-azure-blob-filesystem-support': 'conductor-azure-blob-filesystem-support.md'
-  - 'conductor-git-vcs-support': 'conductor-git-vcs-support.md'
-  - 'conductor-mysql-database-support': 'conductor-mysql-database-support.md'
-  - 'conductor-ssh-support': 'conductor-ssh-support.md'
-  - 'Application Support':
-    - 'conductor-drupal-platform-support': 'conductor-drupal-platform-support.md'
-    - 'conductor-magento-1-platform-support': 'conductor-magento-1-platform-support.md'
-    - 'conductor-magento-2-platform-support': 'conductor-magento-2-platform-support.md'
-    - 'conductor-wordpress-platform-support': 'conductor-wordpress-platform-support.md'
+  - Core: modules/core/index.md
+  - Application Orchestration: modules/application-orchestration.md
+  - Platform Support:
+    - Drupal 8: modules/platform-support/drupal-8.md
+    - Magento 1: modules/platform-support/magento-1.md
+    - Magento 2: modules/platform-support/magento-2.md
+    - Wordpress: modules/platform-support/wordpress.md
+  - Filesystem Support:
+    - AWS (Amazon Web Services): modules/filesystem-support/aws.md
+    - Microsoft Azure: modules/filesystem-support/microsoft-azure.md
+    - SFTP: modules/filesystem-support/sftp.md
+  - Database Support:
+    - MySQL: modules/database-support/mysql.md
+  - Shell Support:
+    - SaltStack: modules/shell-support/salt-stack.md
+    - SSH: modules/shell-support/ssh.md
+  - VCS Support:
+    - Git: modules/vcs-support/git.md
 
 theme:
-      name: mkdocs
+  name: mkdocs
 extra_css:
-    - css/version-select.css
+- css/version-select.css
 extra_javascript:
-    - js/version-select.js
+- js/version-select.js
+
+module_path_map:
+  core: core
+

@@ -1,0 +1,29 @@
+{
+  "name": "conductor/docs",
+  "description": "Conductor: Documentation",
+  "type": "library",
+  "homepage": "https://github.com/conductorphp/conductor-docs",
+  "license": "Apache 2.0",
+  "authors": [
+    {
+      "name": "Kirk Madera",
+      "email": "kmadera@robofirm.com"
+    },
+    {
+      "name": "Mathew Beane",
+      "email": "mbeane@robofirm.com"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "conductor/core": "^0.9"
+  },
+  "repositories": {
+    "conductor-core": {
+      "type": "vcs",
+      "url": "git@github.com:conductorphp/conductor-core.git"
+    }
+  }
+}
