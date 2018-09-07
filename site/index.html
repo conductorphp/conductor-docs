@@ -33,11 +33,117 @@
 
                 <!-- Collapsed navigation -->
                 <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <a class="navbar-brand" href=".">Conductor</a>
                 </div>
 
                 <!-- Expanded navigation -->
                 <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href=".">Home</a>
+                            </li>
+                            <li >
+                                <a href="guides/getting-started.md">Getting Started</a>
+                            </li>
+                            <li >
+                                <a href="guides.md">Guides</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="modules/core/">Core</a>
+</li>
+                                    
+<li >
+    <a href="modules/application-orchestration/">Application Orchestration</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Platform Support</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="modules/platform-support/drupal-8/">Drupal 8</a>
+</li>
+            
+<li >
+    <a href="modules/platform-support/magento-1/">Magento 1</a>
+</li>
+            
+<li >
+    <a href="modules/platform-support/magento-2/">Magento 2</a>
+</li>
+            
+<li >
+    <a href="modules/platform-support/wordpress/">Wordpress</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Filesystem Support</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="modules/filesystem-support/aws/">AWS (Amazon Web Services)</a>
+</li>
+            
+<li >
+    <a href="modules/filesystem-support/microsoft-azure/">Microsoft Azure</a>
+</li>
+            
+<li >
+    <a href="modules/filesystem-support/sftp/">SFTP</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Database Support</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="modules/database-support/mysql/">MySQL</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Shell Support</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="modules/shell-support/salt-stack/">SaltStack</a>
+</li>
+            
+<li >
+    <a href="modules/shell-support/ssh/">SSH</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">VCS Support</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="modules/vcs-support/git/">Git</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -45,6 +151,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="disabled">
+                                <a rel="next" >
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="modules/core/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -53,35 +169,37 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#conductor-documentation">Conductor Documentation</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#mkdocs-example-stuff">MkDocs Example Stuff</a></li>
-            <li><a href="#project-layout">Project layout</a></li>
+        <li class="main active"><a href="#conductor-php">Conductor PHP</a></li>
+            <li><a href="#what-is-conductor">What is Conductor?</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#guides">Guides</a></li>
+            <li><a href="#conductor-modules">Conductor Modules</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="conductor-documentation">Conductor Documentation</h1>
-<h2 id="about">About</h2>
-<p>More detailed blurb about conductor.</p>
+<h1 id="conductor-php">Conductor PHP</h1>
+<h2 id="what-is-conductor">What is Conductor?</h2>
+<p>Conductor is a software development lifecycle tool for managing environments and performing production deployments.</p>
+<p>With Conductor, you can:</p>
 <ul>
-<li>some items here</li>
-<li>another item</li>
+<li>Ensure lower environments stay in sync with scrubbed production data</li>
+<li>Maintain common assets and files across environments</li>
+<li>Handle environment specific configuration differences</li>
+<li>Populate test data</li>
+<li>Perform reliable, immutable builds, snapshots, and deployments based on configured plans</li>
+<li>Select from a library of supported or community Composer packages to extend functionality</li>
+<li>Work with many different filesystems, databases, servers, and version control systems</li>
+<li>Conductor is written in PHP to allow you to easily customize or extend the functionality with your existing development team.</li>
 </ul>
-<h2 id="mkdocs-example-stuff">MkDocs Example Stuff</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    somet.md   # Just a test
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<h2 id="getting-started">Getting Started</h2>
+<p>Blurb about getting started document here. Maybe a quick howto?</p>
+<p>See the <a href="getting-started.md">Getting Started Guide</a></p>
+<p>(<em>full table of contents, when guide is completed</em>)</p>
+<h2 id="guides">Guides</h2>
+<p>Section intended for more detailed guides on how to implement a specific requirement, or application.</p>
+<h2 id="conductor-modules">Conductor Modules</h2>
+<p>Another blurb about modules.. and maybe a list.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -90,7 +208,7 @@ docs/
         </footer>
         <script>
             var base_url = ".",
-                shortcuts = {"next": 78, "help": 191, "previous": 80, "search": 83};
+                shortcuts = {"help": 191, "previous": 80, "search": 83, "next": 78};
         </script>
         <script src="js/base.js" defer></script>
         <script src="js/version-select.js" defer></script>
@@ -165,5 +283,5 @@ docs/
 
 <!--
 MkDocs version : 1.0.3
-Build Date UTC : 2018-09-04 17:13:54
+Build Date UTC : 2018-09-07 13:52:03
 -->
