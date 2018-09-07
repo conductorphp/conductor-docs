@@ -4,29 +4,29 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Conductor</title>
-        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Magento 2 - Conductor</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <link href="css/version-select.css" rel="stylesheet">
+        <link href="../../../css/version-select.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -40,32 +40,32 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href=".">Conductor</a>
+                    <a class="navbar-brand" href="../../..">Conductor</a>
                 </div>
 
                 <!-- Expanded navigation -->
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href=".">Home</a>
+                            <li >
+                                <a href="../../..">Home</a>
                             </li>
                             <li >
-                                <a href="guides/getting-started.md">Getting Started</a>
+                                <a href="../../../guides/getting-started.md">Getting Started</a>
                             </li>
                             <li >
-                                <a href="guides.md">Guides</a>
+                                <a href="../../../guides.md">Guides</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Modules <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="modules/core">Core</a>
+    <a href="../../core">Core</a>
 </li>
                                     
 <li >
-    <a href="modules/application-orchestration/">Application Orchestration</a>
+    <a href="../../application-orchestration/">Application Orchestration</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -73,19 +73,19 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="modules/platform-support/drupal-8/">Drupal 8</a>
+    <a href="../drupal-8/">Drupal 8</a>
 </li>
             
 <li >
-    <a href="modules/platform-support/magento-1/">Magento 1</a>
+    <a href="../magento-1/">Magento 1</a>
+</li>
+            
+<li class="active">
+    <a href="./">Magento 2</a>
 </li>
             
 <li >
-    <a href="modules/platform-support/magento-2/">Magento 2</a>
-</li>
-            
-<li >
-    <a href="modules/platform-support/wordpress/">Wordpress</a>
+    <a href="../wordpress/">Wordpress</a>
 </li>
     </ul>
   </li>
@@ -95,15 +95,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="modules/filesystem-support/aws/">AWS (Amazon Web Services)</a>
+    <a href="../../filesystem-support/aws/">AWS (Amazon Web Services)</a>
 </li>
             
 <li >
-    <a href="modules/filesystem-support/microsoft-azure/">Microsoft Azure</a>
+    <a href="../../filesystem-support/microsoft-azure/">Microsoft Azure</a>
 </li>
             
 <li >
-    <a href="modules/filesystem-support/sftp/">SFTP</a>
+    <a href="../../filesystem-support/sftp/">SFTP</a>
 </li>
     </ul>
   </li>
@@ -113,7 +113,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="modules/database-support/mysql/">MySQL</a>
+    <a href="../../database-support/mysql/">MySQL</a>
 </li>
     </ul>
   </li>
@@ -123,11 +123,11 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="modules/shell-support/salt-stack/">SaltStack</a>
+    <a href="../../shell-support/salt-stack/">SaltStack</a>
 </li>
             
 <li >
-    <a href="modules/shell-support/ssh/">SSH</a>
+    <a href="../../shell-support/ssh/">SSH</a>
 </li>
     </ul>
   </li>
@@ -137,7 +137,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="modules/vcs-support/git/">Git</a>
+    <a href="../../vcs-support/git/">Git</a>
 </li>
     </ul>
   </li>
@@ -151,13 +151,13 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="disabled">
-                                <a rel="next" >
+                            <li >
+                                <a rel="next" href="../magento-1/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="modules/application-orchestration/">
+                                <a rel="prev" href="../wordpress/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -169,37 +169,13 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#conductor-php">Conductor PHP</a></li>
-            <li><a href="#what-is-conductor">What is Conductor?</a></li>
-            <li><a href="#getting-started">Getting Started</a></li>
-            <li><a href="#guides">Guides</a></li>
-            <li><a href="#conductor-modules">Conductor Modules</a></li>
+        <li class="main active"><a href="#magento-2-platform-support">Magento 2 Platform Support</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="conductor-php">Conductor PHP</h1>
-<h2 id="what-is-conductor">What is Conductor?</h2>
-<p>Conductor is a software development lifecycle tool for managing environments and performing production deployments.</p>
-<p>With Conductor, you can:</p>
-<ul>
-<li>Ensure lower environments stay in sync with scrubbed production data</li>
-<li>Maintain common assets and files across environments</li>
-<li>Handle environment specific configuration differences</li>
-<li>Populate test data</li>
-<li>Perform reliable, immutable builds, snapshots, and deployments based on configured plans</li>
-<li>Select from a library of supported or community Composer packages to extend functionality</li>
-<li>Work with many different filesystems, databases, servers, and version control systems</li>
-<li>Conductor is written in PHP to allow you to easily customize or extend the functionality with your existing development team.</li>
-</ul>
-<h2 id="getting-started">Getting Started</h2>
-<p>Blurb about getting started document here. Maybe a quick howto?</p>
-<p>See the <a href="getting-started.md">Getting Started Guide</a></p>
-<p>(<em>full table of contents, when guide is completed</em>)</p>
-<h2 id="guides">Guides</h2>
-<p>Section intended for more detailed guides on how to implement a specific requirement, or application.</p>
-<h2 id="conductor-modules">Conductor Modules</h2>
-<p>Another blurb about modules.. and maybe a list.</p></div>
+<h1 id="magento-2-platform-support">Magento 2 Platform Support</h1>
+<p>@todo Add documentation</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -207,12 +183,12 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "../../..",
                 shortcuts = {"previous": 80, "search": 83, "help": 191, "next": 78};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="js/version-select.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../js/version-select.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
@@ -280,8 +256,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.0.3
-Build Date UTC : 2018-09-07 12:56:16
--->
