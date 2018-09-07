@@ -11,6 +11,12 @@ for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
     {
         git checkout $branch
         composer update
+
+        if [[ -z $(git diff) ]]; then
+            echo "No changes found in $version docs."
+            continue
+        fi
+
         ./install-module-docs.sh
         mike deploy $version -p
         git add .
