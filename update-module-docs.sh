@@ -9,19 +9,21 @@ for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
     version=${branch:8}
     echo "Updating $version docs..."
     {
-        git checkout $branch
-        composer update
+        git checkout $branch > /dev/null
+        composer update > /dev/null
 
         if [[ -z $(git diff) ]]; then
             echo "No changes found in $version docs."
             continue
         fi
 
-        ./install-module-docs.sh
+        echo "Changes found. Deploying..."
+        deploy-module-docs.sh
         mike deploy $version -p
+
+        echo "Pushing changes back to repo..."
         git add .
-        git commit -m "Updated module docs"
-        git push
+        git push -u origin $branch
     }
     echo "$version docs deployed."
 done

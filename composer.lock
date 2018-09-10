@@ -164,16 +164,16 @@
         },
         {
             "name": "conductor/application-orchestration",
-            "version": "0.9.7",
+            "version": "0.9.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/conductorphp/conductor-application-orchestration.git",
-                "reference": "18643a857d9d65dbfa820a240a5c273e8ac1e8d1"
+                "reference": "365b16ec3e852db7886f1c43075d9c99faaaa4d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/conductorphp/conductor-application-orchestration/zipball/18643a857d9d65dbfa820a240a5c273e8ac1e8d1",
-                "reference": "18643a857d9d65dbfa820a240a5c273e8ac1e8d1",
+                "url": "https://api.github.com/repos/conductorphp/conductor-application-orchestration/zipball/365b16ec3e852db7886f1c43075d9c99faaaa4d5",
+                "reference": "365b16ec3e852db7886f1c43075d9c99faaaa4d5",
                 "shasum": ""
             },
             "require": {
@@ -238,10 +238,10 @@
             "description": "Conductor: Application Orchestration",
             "homepage": "https://github.com/conductorphp/conductor-application-orchestration",
             "support": {
-                "source": "https://github.com/conductorphp/conductor-application-orchestration/tree/0.9.7",
+                "source": "https://github.com/conductorphp/conductor-application-orchestration/tree/0.9.8",
                 "issues": "https://github.com/conductorphp/conductor-application-orchestration/issues"
             },
-            "time": "2018-09-10T17:23:34+00:00"
+            "time": "2018-09-10T22:52:04+00:00"
         },
         {
             "name": "conductor/aws-s3-filesystem-support",
