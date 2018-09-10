@@ -245,16 +245,16 @@
         },
         {
             "name": "conductor/aws-s3-filesystem-support",
-            "version": "0.9.1",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/conductorphp/conductor-aws-s3-filesystem-support.git",
-                "reference": "5406741f5258b1059ef6c901f2ddda819bf17947"
+                "reference": "b57b3e2c8b163c9b9edb6cc959290362743b834a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/conductorphp/conductor-aws-s3-filesystem-support/zipball/5406741f5258b1059ef6c901f2ddda819bf17947",
-                "reference": "5406741f5258b1059ef6c901f2ddda819bf17947",
+                "url": "https://api.github.com/repos/conductorphp/conductor-aws-s3-filesystem-support/zipball/b57b3e2c8b163c9b9edb6cc959290362743b834a",
+                "reference": "b57b3e2c8b163c9b9edb6cc959290362743b834a",
                 "shasum": ""
             },
             "require": {
@@ -313,10 +313,10 @@
             "description": "Conductor: AWS S3 Filesystem Support",
             "homepage": "https://github.com/conductorphp/conductor-aws-s3-filesystem-support",
             "support": {
-                "source": "https://github.com/conductorphp/conductor-aws-s3-filesystem-support/tree/0.9.1",
+                "source": "https://github.com/conductorphp/conductor-aws-s3-filesystem-support/tree/0.9.2",
                 "issues": "https://github.com/conductorphp/conductor-aws-s3-filesystem-support/issues"
             },
-            "time": "2018-08-30T10:56:14+00:00"
+            "time": "2018-09-10T23:12:09+00:00"
         },
         {
             "name": "conductor/azure-blob-filesystem-support",

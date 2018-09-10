@@ -8,25 +8,23 @@ for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
 
     version=${branch:8}
     echo "Updating $version docs..."
-    {
-        currentBranch=$(git symbolic-ref HEAD --short)
-        if [[ ! $currentBranch == $branch ]]; then
-            git checkout $branch > /dev/null
-        fi
-        composer update --quiet > /dev/null
+    currentBranch=$(git symbolic-ref HEAD --short)
+    if [[ ! $currentBranch == $branch ]]; then
+        git checkout $branch > /dev/null
+    fi
+    composer update --quiet > /dev/null
 
-        if [[ -z $(git diff) ]]; then
-            echo "No changes found in $version docs."
-            continue
-        fi
+    if [[ -z $(git diff) ]]; then
+        echo "No changes found in $version docs."
+        continue
+    fi
 
-        echo "Changes found. Deploying..."
-        deploy-module-docs.sh
-        mike deploy $version -p
+    echo "Changes found. Deploying..."
+    ./deploy-module-docs.sh
+    mike deploy $version -p
 
-        echo "Pushing changes back to repo..."
-        git add .
-        git push -u origin $branch
-    }
+    echo "Pushing changes back to repo..."
+    git add . > /dev/null
+    git push -u origin $branch > /dev/null
     echo "$version docs deployed."
 done
