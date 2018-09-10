@@ -24,11 +24,15 @@ eval $(parse_yaml mkdocs.yml "config_")
 
 for dir in vendor/conductor/*/ ; do
     module=${dir:17:-1}
+    module="$(sed s/-/_/g <<<$module)"
     varName="config_module_path_map_$module"
     path=${!varName}
     if [[ -z $path ]]; then
       echo -e "${RED}Conductor module \"$module\" not defined in module_path_map. Add module_path_map/$module to mkdocs.yml.${NC}"
       continue
     fi
-    rsync -r "$dir/docs/" "docs/modules/$path"
+
+    if [[ -d "$dir/docs/" ]]; then
+      rsync -r "$dir/docs/" "docs/modules/$path"
+    fi
 done

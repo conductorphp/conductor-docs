@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "023ccac7d5dbcc49e20c2b7f095b738a",
+    "content-hash": "9e005078fd33f4a56ecc08470060e970",
     "packages": [
         {
             "name": "amphp/amp",
@@ -83,17 +83,328 @@
             "time": "2018-04-30T20:49:57+00:00"
         },
         {
-            "name": "conductor/core",
-            "version": "0.9.2",
+            "name": "aws/aws-sdk-php",
+            "version": "3.67.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/conductorphp/conductor-core.git",
-                "reference": "4a663575bd291fa9d69bc4c8ca5256842bc9d2e6"
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "bc580636c7e7c4ed4293776bfac250f726554a41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/conductorphp/conductor-core/zipball/4a663575bd291fa9d69bc4c8ca5256842bc9d2e6",
-                "reference": "4a663575bd291fa9d69bc4c8ca5256842bc9d2e6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/bc580636c7e7c4ed4293776bfac250f726554a41",
+                "reference": "bc580636c7e7c4ed4293776bfac250f726554a41",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-pcre": "*",
+                "ext-simplexml": "*",
+                "ext-spl": "*",
+                "guzzlehttp/guzzle": "^5.3.1|^6.2.1",
+                "guzzlehttp/promises": "~1.0",
+                "guzzlehttp/psr7": "^1.4.1",
+                "mtdowling/jmespath.php": "~2.2",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "andrewsville/php-token-reflection": "^1.4",
+                "aws/aws-php-sns-message-validator": "~1.0",
+                "behat/behat": "~3.0",
+                "doctrine/cache": "~1.4",
+                "ext-dom": "*",
+                "ext-openssl": "*",
+                "nette/neon": "^2.3",
+                "phpunit/phpunit": "^4.8.35|^5.4.3",
+                "psr/cache": "^1.0"
+            },
+            "suggest": {
+                "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
+                "doctrine/cache": "To use the DoctrineCacheAdapter",
+                "ext-curl": "To send requests using cURL",
+                "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aws\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Amazon Web Services",
+                    "homepage": "http://aws.amazon.com"
+                }
+            ],
+            "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
+            "homepage": "http://aws.amazon.com/sdkforphp",
+            "keywords": [
+                "amazon",
+                "aws",
+                "cloud",
+                "dynamodb",
+                "ec2",
+                "glacier",
+                "s3",
+                "sdk"
+            ],
+            "time": "2018-09-10T21:52:39+00:00"
+        },
+        {
+            "name": "conductor/application-orchestration",
+            "version": "0.9.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/conductorphp/conductor-application-orchestration.git",
+                "reference": "18643a857d9d65dbfa820a240a5c273e8ac1e8d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/conductorphp/conductor-application-orchestration/zipball/18643a857d9d65dbfa820a240a5c273e8ac1e8d1",
+                "reference": "18643a857d9d65dbfa820a240a5c273e8ac1e8d1",
+                "shasum": ""
+            },
+            "require": {
+                "conductor/core": "~0.9.2",
+                "php": "^7.1",
+                "twig/twig": "^2.0",
+                "zendframework/zend-servicemanager": "^3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
+                "zendframework/zend-coding-standard": "~1.0.0"
+            },
+            "suggest": {
+                "conductor/drupal-platform-support": "Adds support for the Drupal platform.",
+                "conductor/magento-1-platform-support": "Adds support for the Magento 1 platform.",
+                "conductor/magento-2-platform-support": "Adds support for the Magento 2 platform.",
+                "conductor/wordpress-platform-support": "Adds support for the Wordpress platform."
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "config-provider": "ConductorAppOrchestration\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConductorAppOrchestration\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ConductorAwsS3FilesystemSupportTest\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kirk Madera",
+                    "email": "kmadera@robofirm.com"
+                }
+            ],
+            "description": "Conductor: Application Orchestration",
+            "homepage": "https://github.com/conductorphp/conductor-application-orchestration",
+            "support": {
+                "source": "https://github.com/conductorphp/conductor-application-orchestration/tree/0.9.7",
+                "issues": "https://github.com/conductorphp/conductor-application-orchestration/issues"
+            },
+            "time": "2018-09-10T17:23:34+00:00"
+        },
+        {
+            "name": "conductor/aws-s3-filesystem-support",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/conductorphp/conductor-aws-s3-filesystem-support.git",
+                "reference": "5406741f5258b1059ef6c901f2ddda819bf17947"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/conductorphp/conductor-aws-s3-filesystem-support/zipball/5406741f5258b1059ef6c901f2ddda819bf17947",
+                "reference": "5406741f5258b1059ef6c901f2ddda819bf17947",
+                "shasum": ""
+            },
+            "require": {
+                "conductor/core": "~0.9.2",
+                "league/flysystem-aws-s3-v3": "^1.0",
+                "php": "^7.1",
+                "zendframework/zend-servicemanager": "^3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
+                "zendframework/zend-coding-standard": "~1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "config-provider": "ConductorAwsS3FilesystemSupport\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConductorAwsS3FilesystemSupport\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ConductorAwsS3FilesystemSupportTest\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kirk Madera",
+                    "email": "kmadera@robofirm.com"
+                }
+            ],
+            "description": "Conductor: AWS S3 Filesystem Support",
+            "homepage": "https://github.com/conductorphp/conductor-aws-s3-filesystem-support",
+            "support": {
+                "source": "https://github.com/conductorphp/conductor-aws-s3-filesystem-support/tree/0.9.1",
+                "issues": "https://github.com/conductorphp/conductor-aws-s3-filesystem-support/issues"
+            },
+            "time": "2018-08-30T10:56:14+00:00"
+        },
+        {
+            "name": "conductor/azure-blob-filesystem-support",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/conductorphp/conductor-azure-blob-filesystem-support.git",
+                "reference": "315471fa1ba0edc4acf9df1587f3e97582ff6d0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/conductorphp/conductor-azure-blob-filesystem-support/zipball/315471fa1ba0edc4acf9df1587f3e97582ff6d0b",
+                "reference": "315471fa1ba0edc4acf9df1587f3e97582ff6d0b",
+                "shasum": ""
+            },
+            "require": {
+                "conductor/core": "~0.9.2",
+                "league/flysystem-azure": "^1.0",
+                "php": "^7.1",
+                "zendframework/zend-servicemanager": "^3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
+                "zendframework/zend-coding-standard": "~1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "config-provider": "ConductorAzureBlobFilesystemSupport\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConductorAzureBlobFilesystemSupport\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ConductorAzureBlobFilesystemSupportTest\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kirk Madera",
+                    "email": "kmadera@robofirm.com"
+                }
+            ],
+            "description": "Conductor: Azure Blob Filesystem Support",
+            "homepage": "https://github.com/conductorphp/conductor-azure-blob-filesystem-support",
+            "support": {
+                "source": "https://github.com/conductorphp/conductor-azure-blob-filesystem-support/tree/0.9.1",
+                "issues": "https://github.com/conductorphp/conductor-azure-blob-filesystem-support/issues"
+            },
+            "time": "2018-08-30T11:55:49+00:00"
+        },
+        {
+            "name": "conductor/core",
+            "version": "0.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/conductorphp/conductor-core.git",
+                "reference": "8a40e6969955f87d001ef1298665c06ebf17459a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/conductorphp/conductor-core/zipball/8a40e6969955f87d001ef1298665c06ebf17459a",
+                "reference": "8a40e6969955f87d001ef1298665c06ebf17459a",
                 "shasum": ""
             },
             "require": {
@@ -172,10 +483,456 @@
             "description": "Conductor: Core",
             "homepage": "https://github.com/conductorphp/conductor-core",
             "support": {
-                "source": "https://github.com/conductorphp/conductor-core/tree/0.9.2",
+                "source": "https://github.com/conductorphp/conductor-core/tree/0.9.3",
                 "issues": "https://github.com/conductorphp/conductor-core/issues"
             },
-            "time": "2018-08-27T21:43:54+00:00"
+            "time": "2018-09-10T22:40:46+00:00"
+        },
+        {
+            "name": "conductor/drupal-platform-support",
+            "version": "0.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/conductorphp/conductor-drupal-platform-support.git",
+                "reference": "6270afae862b4f3f660311955f9b95e62fb00926"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/conductorphp/conductor-drupal-platform-support/zipball/6270afae862b4f3f660311955f9b95e62fb00926",
+                "reference": "6270afae862b4f3f660311955f9b95e62fb00926",
+                "shasum": ""
+            },
+            "require": {
+                "conductor/application-orchestration": "~0.9.3",
+                "php": "^7.1",
+                "zendframework/zend-servicemanager": "^3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
+                "zendframework/zend-coding-standard": "~1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "config-provider": "ConductorDrupalPlatformSupport\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConductorDrupalPlatformSupport\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ConductorDrupalPlatformSupportTest\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kirk Madera",
+                    "email": "kmadera@robofirm.com"
+                }
+            ],
+            "description": "Conductor: Drupal Platform Support",
+            "homepage": "https://github.com/conductorphp/conductor-drupal-platform-support",
+            "support": {
+                "source": "https://github.com/conductorphp/conductor-drupal-platform-support/tree/0.9.2",
+                "issues": "https://github.com/conductorphp/conductor-drupal-platform-support/issues"
+            },
+            "time": "2018-09-10T17:17:57+00:00"
+        },
+        {
+            "name": "conductor/git-vcs-support",
+            "version": "0.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/conductorphp/conductor-git-vcs-support.git",
+                "reference": "c6b7db929fc3c279271ad9ab69c4e9025415ba14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/conductorphp/conductor-git-vcs-support/zipball/c6b7db929fc3c279271ad9ab69c4e9025415ba14",
+                "reference": "c6b7db929fc3c279271ad9ab69c4e9025415ba14",
+                "shasum": ""
+            },
+            "require": {
+                "conductor/core": "~0.9.2",
+                "cypresslab/gitelephant": "^2.0",
+                "php": "^7.1",
+                "zendframework/zend-servicemanager": "^3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
+                "zendframework/zend-coding-standard": "~1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "config-provider": "ConductorGitVcsSupport\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConductorGitVcsSupport\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ConductorGitVcsSupportTest\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kirk Madera",
+                    "email": "kmadera@robofirm.com"
+                }
+            ],
+            "description": "Conductor: Git VCS Support",
+            "homepage": "https://github.com/conductorphp/conductor-git-vcs-support",
+            "support": {
+                "source": "https://github.com/conductorphp/conductor-git-vcs-support/tree/0.9.3",
+                "issues": "https://github.com/conductorphp/conductor-git-vcs-support/issues"
+            },
+            "time": "2018-09-02T13:24:10+00:00"
+        },
+        {
+            "name": "conductor/magento-1-platform-support",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/conductorphp/conductor-magento-1-platform-support.git",
+                "reference": "73b39fc0cb89db2cab6a47ebcc27d8ed02d98fc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/conductorphp/conductor-magento-1-platform-support/zipball/73b39fc0cb89db2cab6a47ebcc27d8ed02d98fc1",
+                "reference": "73b39fc0cb89db2cab6a47ebcc27d8ed02d98fc1",
+                "shasum": ""
+            },
+            "require": {
+                "conductor/application-orchestration": "~0.9.3",
+                "php": "^7.1",
+                "zendframework/zend-servicemanager": "^3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
+                "zendframework/zend-coding-standard": "~1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "config-provider": "ConductorMagento1PlatformSupport\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConductorMagento1PlatformSupport\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ConductorMagento1PlatformSupportTest\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kirk Madera",
+                    "email": "kmadera@robofirm.com"
+                }
+            ],
+            "description": "Conductor: Magento 1 Platform Support",
+            "homepage": "https://github.com/conductorphp/conductor-magento-1-platform-support",
+            "support": {
+                "source": "https://github.com/conductorphp/conductor-magento-1-platform-support/tree/0.9.1",
+                "issues": "https://github.com/conductorphp/conductor-magento-1-platform-support/issues"
+            },
+            "time": "2018-08-30T11:59:48+00:00"
+        },
+        {
+            "name": "conductor/magento-2-platform-support",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/conductorphp/conductor-magento-2-platform-support.git",
+                "reference": "ed29bab3f152e2eab6641a84b7b1cdaa1e56752e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/conductorphp/conductor-magento-2-platform-support/zipball/ed29bab3f152e2eab6641a84b7b1cdaa1e56752e",
+                "reference": "ed29bab3f152e2eab6641a84b7b1cdaa1e56752e",
+                "shasum": ""
+            },
+            "require": {
+                "conductor/application-orchestration": "~0.9.3",
+                "php": "^7.1",
+                "zendframework/zend-servicemanager": "^3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
+                "zendframework/zend-coding-standard": "~1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "config-provider": "ConductorMagento2PlatformSupport\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConductorMagento2PlatformSupport\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ConductorMagento2PlatformSupportTest\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kirk Madera",
+                    "email": "kmadera@robofirm.com"
+                }
+            ],
+            "description": "Conductor: Magento 2 Platform Support",
+            "homepage": "https://github.com/conductorphp/conductor-magento-2-platform-support",
+            "support": {
+                "source": "https://github.com/conductorphp/conductor-magento-2-platform-support/tree/0.9.1",
+                "issues": "https://github.com/conductorphp/conductor-magento-2-platform-support/issues"
+            },
+            "time": "2018-08-30T11:00:22+00:00"
+        },
+        {
+            "name": "conductor/mysql-database-support",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/conductorphp/conductor-mysql-database-support.git",
+                "reference": "dcac676d5c7cfc722ee39000acf472dfa73fccab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/conductorphp/conductor-mysql-database-support/zipball/dcac676d5c7cfc722ee39000acf472dfa73fccab",
+                "reference": "dcac676d5c7cfc722ee39000acf472dfa73fccab",
+                "shasum": ""
+            },
+            "require": {
+                "conductor/core": "~0.9.2",
+                "ext-pdo_mysql": "*",
+                "php": "^7.1",
+                "zendframework/zend-servicemanager": "^3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
+                "zendframework/zend-coding-standard": "~1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "config-provider": "ConductorMySqlSupport\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConductorMySqlSupport\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ConductorMySqlSupportTest\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kirk Madera",
+                    "email": "kmadera@robofirm.com"
+                }
+            ],
+            "description": "Conductor: MySQL Database Support",
+            "homepage": "https://github.com/conductorphp/mysql-database-support",
+            "support": {
+                "source": "https://github.com/conductorphp/conductor-mysql-database-support/tree/0.9.1",
+                "issues": "https://github.com/conductorphp/conductor-mysql-database-support/issues"
+            },
+            "time": "2018-08-30T11:01:55+00:00"
+        },
+        {
+            "name": "conductor/wordpress-platform-support",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/conductorphp/conductor-wordpress-platform-support.git",
+                "reference": "54a15fc5cf6e0a181cab4fcd3eee9efb53686d4c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/conductorphp/conductor-wordpress-platform-support/zipball/54a15fc5cf6e0a181cab4fcd3eee9efb53686d4c",
+                "reference": "54a15fc5cf6e0a181cab4fcd3eee9efb53686d4c",
+                "shasum": ""
+            },
+            "require": {
+                "conductor/application-orchestration": "~0.9.3",
+                "php": "^7.1",
+                "zendframework/zend-servicemanager": "^3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
+                "zendframework/zend-coding-standard": "~1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "config-provider": "ConductorWordpressPlatformSupport\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConductorWordpressPlatformSupport\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ConductorWordpressPlatformSupportTest\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ]
+            },
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kirk Madera",
+                    "email": "kmadera@robofirm.com"
+                }
+            ],
+            "description": "Conductor: WordPress Platform Support",
+            "homepage": "https://github.com/conductorphp/conductor-wordpress-platform-support",
+            "support": {
+                "source": "https://github.com/conductorphp/conductor-wordpress-platform-support/tree/0.9.1",
+                "issues": "https://github.com/conductorphp/conductor-wordpress-platform-support/issues"
+            },
+            "time": "2018-08-30T12:00:51+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -207,6 +964,55 @@
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
             "time": "2017-02-14T19:40:03+00:00"
+        },
+        {
+            "name": "cypresslab/gitelephant",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matteosister/GitElephant.git",
+                "reference": "99184d24cc76fa2729639ae43a9a4137cb635239"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matteosister/GitElephant/zipball/99184d24cc76fa2729639ae43a9a4137cb635239",
+                "reference": "99184d24cc76fa2729639ae43a9a4137cb635239",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0",
+                "phpcollection/phpcollection": "~0.4",
+                "symfony/filesystem": "~2.0|~3.0|~4.0",
+                "symfony/finder": "~2.0|~3.0|~4.0",
+                "symfony/process": "~2.0|~3.0|~4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~6.0",
+                "symfony/var-dumper": "3.*|4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "GitElephant": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Matteo Giachino",
+                    "email": "matteog@gmail.com"
+                }
+            ],
+            "description": "An abstraction layer for git written in PHP 5.3",
+            "homepage": "http://gitelephant.cypresslab.net/",
+            "keywords": [
+                "git"
+            ],
+            "time": "2018-07-13T09:11:19+00:00"
         },
         {
             "name": "defuse/php-encryption",
@@ -320,6 +1126,187 @@
             "time": "2015-09-28T22:16:20+00:00"
         },
         {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2018-04-22T15:46:56+00:00"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-12-20T10:07:11+00:00"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
             "name": "league/flysystem",
             "version": "1.0.46",
             "source": {
@@ -404,6 +1391,101 @@
             "time": "2018-08-22T07:45:22+00:00"
         },
         {
+            "name": "league/flysystem-aws-s3-v3",
+            "version": "1.0.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem-aws-s3-v3.git",
+                "reference": "f135691ef6761542af301b7c9880f140fb12dc74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/f135691ef6761542af301b7c9880f140fb12dc74",
+                "reference": "f135691ef6761542af301b7c9880f140fb12dc74",
+                "shasum": ""
+            },
+            "require": {
+                "aws/aws-sdk-php": "^3.0.0",
+                "league/flysystem": "^1.0.40",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "henrikbjorn/phpspec-code-coverage": "~1.0.1",
+                "phpspec/phpspec": "^2.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\AwsS3v3\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Flysystem adapter for the AWS S3 SDK v3.x",
+            "time": "2018-03-27T20:33:59+00:00"
+        },
+        {
+            "name": "league/flysystem-azure",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem-azure.git",
+                "reference": "0b9838c4f75ee41bc390357b0350e9a62e3b3a1f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-azure/zipball/0b9838c4f75ee41bc390357b0350e9a62e3b3a1f",
+                "reference": "0b9838c4f75ee41bc390357b0350e9a62e3b3a1f",
+                "shasum": ""
+            },
+            "require": {
+                "league/flysystem": "~1.0",
+                "microsoft/azure-storage": "~0.10.1",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\Azure\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Flysystem adapter for Windows Azure",
+            "abandoned": "league/flysystem-azure-blob-storage",
+            "time": "2016-07-10T19:08:39+00:00"
+        },
+        {
             "name": "league/flysystem-sftp",
             "version": "1.0.16",
             "source": {
@@ -444,6 +1526,65 @@
             ],
             "description": "Flysystem adapter for SFTP",
             "time": "2018-07-08T21:01:51+00:00"
+        },
+        {
+            "name": "microsoft/azure-storage",
+            "version": "v0.10.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Azure/azure-storage-php.git",
+                "reference": "27de05b00c1858d6e1c6adbc489efa90e0342f82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Azure/azure-storage-php/zipball/27de05b00c1858d6e1c6adbc489efa90e0342f82",
+                "reference": "27de05b00c1858d6e1c6adbc489efa90e0342f82",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.6",
+                "pdepend/pdepend": "~2.2",
+                "phploc/phploc": "~2.1",
+                "phpmd/phpmd": "@stable",
+                "phpunit/phpunit": "~4.0",
+                "sebastian/phpcpd": "~2.0",
+                "squizlabs/php_codesniffer": "2.*",
+                "theseer/phpdox": "~0.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.10.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MicrosoftAzure\\Storage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Azure Storage PHP SDK",
+                    "email": "dmsh@microsoft.com"
+                }
+            ],
+            "description": "This project provides a set of PHP client libraries that make it easy to access Microsoft Azure storage APIs.",
+            "keywords": [
+                "azure",
+                "php",
+                "sdk",
+                "storage"
+            ],
+            "abandoned": "microsoft/azure-storage-blob, microsoft/azure-storage-table, microsoft/azure-storage-queue, microsoft/azure-storage-file",
+            "time": "2016-08-19T08:32:57+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -524,6 +1665,61 @@
             "time": "2017-06-19T01:22:40+00:00"
         },
         {
+            "name": "mtdowling/jmespath.php",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jmespath/jmespath.php.git",
+                "reference": "adcc9531682cf87dfda21e1fd5d0e7a41d292fac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/adcc9531682cf87dfda21e1fd5d0e7a41d292fac",
+                "reference": "adcc9531682cf87dfda21e1fd5d0e7a41d292fac",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/jp.php"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JmesPath\\": "src/"
+                },
+                "files": [
+                    "src/JmesPath.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Declaratively specify how to extract elements from a JSON document",
+            "keywords": [
+                "json",
+                "jsonpath"
+            ],
+            "time": "2016-12-03T22:08:25+00:00"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v9.99.99",
             "source": {
@@ -567,6 +1763,104 @@
                 "random"
             ],
             "time": "2018-07-02T15:55:56+00:00"
+        },
+        {
+            "name": "phpcollection/phpcollection",
+            "version": "0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-collection.git",
+                "reference": "f2bcff45c0da7c27991bbc1f90f47c4b7fb434a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/php-collection/zipball/f2bcff45c0da7c27991bbc1f90f47c4b7fb434a6",
+                "reference": "f2bcff45c0da7c27991bbc1f90f47c4b7fb434a6",
+                "shasum": ""
+            },
+            "require": {
+                "phpoption/phpoption": "1.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PhpCollection": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "General-Purpose Collection Library for PHP",
+            "keywords": [
+                "collection",
+                "list",
+                "map",
+                "sequence",
+                "set"
+            ],
+            "time": "2015-05-17T12:39:23+00:00"
+        },
+        {
+            "name": "phpoption/phpoption",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-option.git",
+                "reference": "94e644f7d2051a5f0fcf77d81605f152eecff0ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/94e644f7d2051a5f0fcf77d81605f152eecff0ed",
+                "reference": "94e644f7d2051a5f0fcf77d81605f152eecff0ed",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PhpOption\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Option Type for PHP",
+            "keywords": [
+                "language",
+                "option",
+                "php",
+                "type"
+            ],
+            "time": "2015-07-25T16:39:46+00:00"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -708,6 +2002,56 @@
                 "psr"
             ],
             "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -942,6 +2286,105 @@
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
             "time": "2018-07-26T09:10:45+00:00"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v4.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "c0f5f62db218fa72195b8b8700e4b9b9cf52eb5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/c0f5f62db218fa72195b8b8700e4b9b9cf52eb5e",
+                "reference": "c0f5f62db218fa72195b8b8700e4b9b9cf52eb5e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-08-18T16:52:46+00:00"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "v4.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "e162f1df3102d0b7472805a5a9d5db9fcf0a8068"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/e162f1df3102d0b7472805a5a9d5db9fcf0a8068",
+                "reference": "e162f1df3102d0b7472805a5a9d5db9fcf0a8068",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Finder\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-07-26T11:24:31+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -1268,6 +2711,55 @@
             "time": "2018-08-06T14:22:27+00:00"
         },
         {
+            "name": "symfony/process",
+            "version": "v4.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "86cdb930a6a855b0ab35fb60c1504cb36184f843"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/86cdb930a6a855b0ab35fb60c1504cb36184f843",
+                "reference": "86cdb930a6a855b0ab35fb60c1504cb36184f843",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-08-03T11:13:38+00:00"
+        },
+        {
             "name": "symfony/yaml",
             "version": "v4.1.4",
             "source": {
@@ -1325,6 +2817,73 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2018-08-18T16:52:46+00:00"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "6a5f676b77a90823c2d4eaf76137b771adf31323"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6a5f676b77a90823c2d4eaf76137b771adf31323",
+                "reference": "6a5f676b77a90823c2d4eaf76137b771adf31323",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "symfony/polyfill-ctype": "^1.8",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "require-dev": {
+                "psr/container": "^1.0",
+                "symfony/debug": "^2.7",
+                "symfony/phpunit-bridge": "^3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "https://twig.symfony.com/contributors",
+                    "role": "Contributors"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "https://twig.symfony.com",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2018-07-13T07:18:09+00:00"
         },
         {
             "name": "zendframework/zend-servicemanager",

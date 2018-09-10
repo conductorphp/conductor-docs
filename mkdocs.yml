@@ -6,23 +6,23 @@ nav:
 - Guides: guides.md
 - Modules:
   - Core: modules/core/index.md
-  - Application Orchestration: modules/application-orchestration.md
+  - Application Orchestration: modules/application-orchestration/index.md
   - Platform Support:
-    - Drupal 8: modules/platform-support/drupal-8.md
-    - Magento 1: modules/platform-support/magento-1.md
-    - Magento 2: modules/platform-support/magento-2.md
-    - Wordpress: modules/platform-support/wordpress.md
+    - Drupal: modules/platform-support/drupal/index.md
+    - Magento 1: modules/platform-support/magento-1/index.md
+    - Magento 2: modules/platform-support/magento-2/index.md
+    - Wordpress: modules/platform-support/wordpress/index.md
   - Filesystem Support:
-    - AWS (Amazon Web Services): modules/filesystem-support/aws.md
-    - Microsoft Azure: modules/filesystem-support/microsoft-azure.md
-    - SFTP: modules/filesystem-support/sftp.md
+    - AWS (Amazon Web Services): modules/filesystem-support/aws/index.md
+    - Microsoft Azure: modules/filesystem-support/microsoft-azure/index.md
+    - SFTP: modules/filesystem-support/sftp/index.md
   - Database Support:
-    - MySQL: modules/database-support/mysql.md
+    - MySQL: modules/database-support/mysql/index.md
   - Shell Support:
-    - SaltStack: modules/shell-support/salt-stack.md
-    - SSH: modules/shell-support/ssh.md
+    - SaltStack: modules/shell-support/salt-stack/index.md
+    - SSH: modules/shell-support/ssh/index.md
   - VCS Support:
-    - Git: modules/vcs-support/git.md
+    - Git: modules/vcs-support/git/index.md
 
 theme:
   name: mkdocs
@@ -32,5 +32,13 @@ extra_javascript:
 - js/version-select.js
 
 module_path_map:
+  application_orchestration: application-orchestration
+  aws_s3_filesystem_support: filesystem-support/aws
+  azure_blob_filesystem_support: filesystem-support/microsoft-azure
   core: core
-
+  drupal_platform_support: platform-support/drupal
+  git_vcs_support: vcs-support/git
+  magento_1_platform_support: platform-support/magento-1
+  magento_2_platform_support: platform-support/magento-2
+  mysql_database_support: database-support/mysql
+  wordpress_platform_support: platform-support/wordpress
