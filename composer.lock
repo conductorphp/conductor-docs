@@ -324,12 +324,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/conductorphp/conductor-azure-blob-filesystem-support.git",
-                "reference": "315471fa1ba0edc4acf9df1587f3e97582ff6d0b"
+                "reference": "3842c6a0fcb565a666d9fe26cbd3af2cd448683e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/conductorphp/conductor-azure-blob-filesystem-support/zipball/315471fa1ba0edc4acf9df1587f3e97582ff6d0b",
-                "reference": "315471fa1ba0edc4acf9df1587f3e97582ff6d0b",
+                "url": "https://api.github.com/repos/conductorphp/conductor-azure-blob-filesystem-support/zipball/3842c6a0fcb565a666d9fe26cbd3af2cd448683e",
+                "reference": "3842c6a0fcb565a666d9fe26cbd3af2cd448683e",
                 "shasum": ""
             },
             "require": {
@@ -391,7 +391,7 @@
                 "source": "https://github.com/conductorphp/conductor-azure-blob-filesystem-support/tree/0.9.1",
                 "issues": "https://github.com/conductorphp/conductor-azure-blob-filesystem-support/issues"
             },
-            "time": "2018-08-30T11:55:49+00:00"
+            "time": "2018-09-10T23:38:16+00:00"
         },
         {
             "name": "conductor/core",

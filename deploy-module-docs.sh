@@ -32,7 +32,7 @@ for dir in vendor/conductor/*/ ; do
       continue
     fi
 
-    if [[ -d "./$dir/docs/" ]]; then
+    if [[ -d "$dir/docs/" ]]; then
       mkdir -p "docs/modules/$path"
       rsync -r "$dir/docs/" "docs/modules/$path"
     fi
