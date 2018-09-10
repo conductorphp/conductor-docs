@@ -9,8 +9,11 @@ for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
     version=${branch:8}
     echo "Updating $version docs..."
     {
-        git checkout $branch > /dev/null
-        composer update > /dev/null
+        currentBranch=$(git symbolic-ref HEAD --short)
+        if [[ ! $currentBranch == $branch ]]; then
+            git checkout $branch > /dev/null
+        fi
+        composer update --quiet > /dev/null
 
         if [[ -z $(git diff) ]]; then
             echo "No changes found in $version docs."
